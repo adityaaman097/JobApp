@@ -1,27 +1,26 @@
 package com.algoJava.firstjobapp.job.Entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Job {
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String title;
-    private String desc;
+    private String description;
     private String minSalary;
     private String maxSalary;
     private String location;
 
-    public Job(Long id, String title, String desc, String minSalary, String maxSalary, String location) {
-        this.id = id;
-        this.title = title;
-        this.desc = desc;
-        this.minSalary = minSalary;
-        this.maxSalary = maxSalary;
-        this.location = location;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,11 +33,11 @@ public class Job {
     }
 
     public String getDesc() {
-        return desc;
+        return description;
     }
 
     public void setDesc(String desc) {
-        this.desc = desc;
+        this.description = desc;
     }
 
     public String getMinSalary() {
